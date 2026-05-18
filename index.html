@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CodeCraft Institute — Learn. Build. Grow.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── EmailJS Configuration ──
+  // STEP 1: Sign up at https://www.emailjs.com (free)
+  // STEP 2: Create a Gmail service → copy Service ID below
+  // STEP 3: Create an Email Template → copy Template ID below
+  // STEP 4: Go to Account → copy your Public Key below
+  const EMAILJS_SERVICE_ID  = 'service_f3ri0dp';
+  const EMAILJS_TEMPLATE_ID = 'template_elm6jqr';
+  const EMAILJS_PUBLIC_KEY  = 'L4IGGcxR1XaRzcOt8';
+
+  window.addEventListener('load', function() {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  });
+</script>
 <style>
   :root {
     --bg: #0a0a0f;
@@ -585,7 +600,7 @@
       <div class="stat-label">Students Enrolled</div>
     </div>
     <div class="stat">
-      <div class="stat-num">6<span></span></div>
+      <div class="stat-num">5<span></span></div>
       <div class="stat-label">Programming Languages</div>
     </div>
     <div class="stat">
@@ -689,33 +704,6 @@
       </div>
     </div>
 
-    <!-- Java -->
-    <div class="course-card lang-java">
-      <div class="course-banner">☕</div>
-      <div class="course-body">
-        <span class="course-lang-tag">JAVA</span>
-        <div class="course-name">Java Programming</div>
-        <p class="course-desc">Java powers Android, enterprise systems, and big data. This comprehensive course covers OOP, data structures, collections, and building real-world applications.</p>
-        <div class="course-meta">
-          <span>⏱ 14 Weeks</span>
-          <span>📊 Beginner → Advanced</span>
-          <span>🎓 Certificate</span>
-        </div>
-        <div class="course-topics">
-          <h4>What You'll Learn</h4>
-          <div class="topic-pills">
-            <span class="topic-pill">OOP Concepts</span>
-            <span class="topic-pill">Collections</span>
-            <span class="topic-pill">Exception Handling</span>
-            <span class="topic-pill">Multithreading</span>
-            <span class="topic-pill">JDBC</span>
-            <span class="topic-pill">Spring Intro</span>
-          </div>
-        </div>
-        <button class="btn-enroll" onclick="selectCourse('Java Programming — Rs. 10,000')">Enroll — Rs. 10,000</button>
-      </div>
-    </div>
-
     <!-- C -->
     <div class="course-card lang-c">
       <div class="course-banner">⚙️</div>
@@ -816,10 +804,6 @@
         <div class="prog-item">
           <div class="prog-label"><span>Python</span><span>96%</span></div>
           <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ffd43b,#306998)"></div></div>
-        </div>
-        <div class="prog-item">
-          <div class="prog-label"><span>Java</span><span>94%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#f89820,#e76f00)"></div></div>
         </div>
         <div class="prog-item">
           <div class="prog-label"><span>C++</span><span>92%</span></div>
@@ -929,7 +913,6 @@
           <option>Python Programming — Rs. 8,500</option>
           <option>HTML Web Structure — Rs. 4,500</option>
           <option>CSS Web Styling — Rs. 4,500</option>
-          <option>Java Programming — Rs. 10,000</option>
           <option>C Programming — Rs. 6,500</option>
           <option>C++ Programming — Rs. 9,000</option>
         </select>
@@ -1043,7 +1026,6 @@
       <ul>
         <li><a href="#courses">Python</a></li>
         <li><a href="#courses">HTML & CSS</a></li>
-        <li><a href="#courses">Java</a></li>
         <li><a href="#courses">C / C++</a></li>
       </ul>
     </div>
@@ -1088,7 +1070,6 @@
     'Python Programming — Rs. 8,500': { price: 8500, label: 'Python Programming' },
     'HTML Web Structure — Rs. 4,500': { price: 4500, label: 'HTML Web Structure' },
     'CSS Web Styling — Rs. 4,500': { price: 4500, label: 'CSS Web Styling' },
-    'Java Programming — Rs. 10,000': { price: 10000, label: 'Java Programming' },
     'C Programming — Rs. 6,500': { price: 6500, label: 'C Programming' },
     'C++ Programming — Rs. 9,000': { price: 9000, label: 'C++ Programming' },
   };
@@ -1127,12 +1108,14 @@
   }
 
   function handleRegister() {
-    const fname = document.getElementById('fname').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const city = document.getElementById('city').value;
-    const course = document.getElementById('courseSelect').value;
+    const fname      = document.getElementById('fname').value.trim();
+    const lname      = document.getElementById('lname').value.trim();
+    const email      = document.getElementById('email').value.trim();
+    const phone      = document.getElementById('phone').value.trim();
+    const city       = document.getElementById('city').value;
+    const batch      = document.getElementById('batch').value;
+    const course     = document.getElementById('courseSelect').value;
+    const experience = document.getElementById('experience').value.trim();
 
     if (!fname || !lname || !email || !phone || !city || !course) {
       showModal('⚠️', 'Missing Fields', 'Please fill in all required fields before submitting.');
@@ -1143,9 +1126,37 @@
       return;
     }
 
-    selectedCourse = course;
-    updateOrderSummary(course);
-    showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
+    // Disable button to prevent double-submit
+    const btn = document.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const templateParams = {
+      to_email:    'mhassan.mimran@gmail.com',
+      from_name:   fname + ' ' + lname,
+      from_email:  email,
+      phone:       phone,
+      city:        city,
+      batch:       batch || 'Not specified',
+      course:      course,
+      experience:  experience || 'Not provided',
+      submit_time: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }),
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration →';
+        selectedCourse = course;
+        updateOrderSummary(course);
+        showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
+      })
+      .catch(function(err) {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration →';
+        console.error('EmailJS error:', err);
+        showModal('⚠️', 'Send Failed', 'Could not send your registration. Please check your EmailJS setup (Service ID, Template ID, Public Key) or try again later.');
+      });
   }
 
   function handlePayment() {
