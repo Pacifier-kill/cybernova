@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCraft Institute — Learn. Build. Grow.</title>
+<title>Cyber Nova Institute — Learn. Build. Grow.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
@@ -570,15 +570,14 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Code<span>Craft</span> Institute</div>
+  <div class="nav-logo">Cyber <span>Nova</span> Institute</div>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#courses">Courses</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#register">Register</a></li>
-    <li><a href="#payment">Payment</a></li>
   </ul>
-  <button class="nav-cta" onclick="scrollTo('#register')">Enroll Now</button>
+  <button class="nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Enroll Now</button>
 </nav>
 
 <!-- HERO -->
@@ -589,7 +588,7 @@
     Master <em>Coding</em><br>
     <span class="line2">Shape Your Future</span>
   </h1>
-  <p class="hero-sub">Pakistan's premier online coding institution. Learn Python, Java, C, C++, HTML & CSS from expert instructors with industry experience.</p>
+  <p class="hero-sub">Pakistan's premier coding institute. Learn Python, C++, Web Development, MS Office & Graphic Designing from expert instructors — in-person, hands-on classes.</p>
   <div class="hero-actions">
     <button class="btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses</button>
     <button class="btn-outline" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Register Free</button>
@@ -601,15 +600,15 @@
     </div>
     <div class="stat">
       <div class="stat-num">5<span></span></div>
-      <div class="stat-label">Programming Languages</div>
+      <div class="stat-label">Courses Offered</div>
     </div>
     <div class="stat">
       <div class="stat-num">98<span>%</span></div>
       <div class="stat-label">Completion Rate</div>
     </div>
     <div class="stat">
-      <div class="stat-num">24<span>/7</span></div>
-      <div class="stat-label">Online Access</div>
+      <div class="stat-num">📍</div>
+      <div class="stat-label">On-Campus Classes</div>
     </div>
   </div>
 </section>
@@ -618,116 +617,34 @@
 <section id="courses">
   <div class="courses-header">
     <span class="section-tag">Our Curriculum</span>
-    <h2>Languages We Teach</h2>
-    <p class="section-lead">Structured courses designed by industry experts. From beginner to advanced — each course includes live sessions, projects & certification.</p>
+    <h2>Courses We Offer</h2>
+    <p class="section-lead">Structured courses designed by industry experts. Each course includes live sessions, hands-on projects & a certificate of completion.</p>
   </div>
 
   <div class="courses-grid">
+
     <!-- Python -->
     <div class="course-card lang-python">
       <div class="course-banner">🐍</div>
       <div class="course-body">
         <span class="course-lang-tag">PYTHON</span>
         <div class="course-name">Python Programming</div>
-        <p class="course-desc">Python is the world's most versatile language. This course covers everything from basics to data analysis, automation, and building web apps with Flask/Django.</p>
+        <p class="course-desc">Start from absolute basics and build up to Object-Oriented Programming, File Handling, and Databases. Perfect for beginners who want a solid foundation.</p>
         <div class="course-meta">
-          <span>⏱ 12 Weeks</span>
-          <span>📊 Beginner → Advanced</span>
-          <span>🎓 Certificate</span>
+          <span>⏱ 2 Months</span>
+          <span>📅 2 Classes/Week</span>
+          <span>🕑 2 hrs/class</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
           <div class="topic-pills">
-            <span class="topic-pill">Variables & Data Types</span>
-            <span class="topic-pill">OOP</span>
+            <span class="topic-pill">Basic Python</span>
             <span class="topic-pill">File Handling</span>
-            <span class="topic-pill">Libraries</span>
-            <span class="topic-pill">Web Scraping</span>
-            <span class="topic-pill">Flask Basics</span>
+            <span class="topic-pill">Database</span>
+            <span class="topic-pill">OOP</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Python Programming — Rs. 8,500')">Enroll — Rs. 8,500</button>
-      </div>
-    </div>
-
-    <!-- HTML -->
-    <div class="course-card lang-html">
-      <div class="course-banner">🌐</div>
-      <div class="course-body">
-        <span class="course-lang-tag">HTML5</span>
-        <div class="course-name">HTML — Web Structure</div>
-        <p class="course-desc">HTML is the backbone of every webpage. Learn semantic markup, forms, tables, multimedia embedding, and the building blocks of the modern web.</p>
-        <div class="course-meta">
-          <span>⏱ 6 Weeks</span>
-          <span>📊 Beginner</span>
-          <span>🎓 Certificate</span>
-        </div>
-        <div class="course-topics">
-          <h4>What You'll Learn</h4>
-          <div class="topic-pills">
-            <span class="topic-pill">Tags & Attributes</span>
-            <span class="topic-pill">Forms</span>
-            <span class="topic-pill">Tables</span>
-            <span class="topic-pill">Semantic HTML</span>
-            <span class="topic-pill">Multimedia</span>
-            <span class="topic-pill">HTML5 APIs</span>
-          </div>
-        </div>
-        <button class="btn-enroll" onclick="selectCourse('HTML Web Structure — Rs. 4,500')">Enroll — Rs. 4,500</button>
-      </div>
-    </div>
-
-    <!-- CSS -->
-    <div class="course-card lang-css">
-      <div class="course-banner">🎨</div>
-      <div class="course-body">
-        <span class="course-lang-tag">CSS3</span>
-        <div class="course-name">CSS — Web Styling</div>
-        <p class="course-desc">Make the web beautiful. CSS3 teaches you to control layout, typography, animations, Flexbox, Grid, and responsive design for all screen sizes.</p>
-        <div class="course-meta">
-          <span>⏱ 8 Weeks</span>
-          <span>📊 Beginner → Intermediate</span>
-          <span>🎓 Certificate</span>
-        </div>
-        <div class="course-topics">
-          <h4>What You'll Learn</h4>
-          <div class="topic-pills">
-            <span class="topic-pill">Selectors</span>
-            <span class="topic-pill">Flexbox</span>
-            <span class="topic-pill">CSS Grid</span>
-            <span class="topic-pill">Animations</span>
-            <span class="topic-pill">Responsive</span>
-            <span class="topic-pill">Variables</span>
-          </div>
-        </div>
-        <button class="btn-enroll" onclick="selectCourse('CSS Web Styling — Rs. 4,500')">Enroll — Rs. 4,500</button>
-      </div>
-    </div>
-
-    <!-- C -->
-    <div class="course-card lang-c">
-      <div class="course-banner">⚙️</div>
-      <div class="course-body">
-        <span class="course-lang-tag">C</span>
-        <div class="course-name">C Programming</div>
-        <p class="course-desc">The foundation of modern computing. C teaches you how computers really work — memory management, pointers, system calls, and building efficient programs from scratch.</p>
-        <div class="course-meta">
-          <span>⏱ 10 Weeks</span>
-          <span>📊 Beginner → Intermediate</span>
-          <span>🎓 Certificate</span>
-        </div>
-        <div class="course-topics">
-          <h4>What You'll Learn</h4>
-          <div class="topic-pills">
-            <span class="topic-pill">Pointers</span>
-            <span class="topic-pill">Memory Mgmt</span>
-            <span class="topic-pill">Arrays & Strings</span>
-            <span class="topic-pill">Structs</span>
-            <span class="topic-pill">File I/O</span>
-            <span class="topic-pill">Algorithms</span>
-          </div>
-        </div>
-        <button class="btn-enroll" onclick="selectCourse('C Programming — Rs. 6,500')">Enroll — Rs. 6,500</button>
+        <button class="btn-enroll" onclick="selectCourse('Python Programming — Rs. 8,000')">Enroll — Rs. 8,000</button>
       </div>
     </div>
 
@@ -737,26 +654,100 @@
       <div class="course-body">
         <span class="course-lang-tag">C++</span>
         <div class="course-name">C++ Programming</div>
-        <p class="course-desc">C++ is the language of game engines, system software & high-performance apps. Covers advanced OOP, templates, STL, and modern C++17/20 features.</p>
+        <p class="course-desc">Learn C++ from the ground up — covering core syntax, OOP principles, Pointers, and File Handling to build powerful and efficient programs.</p>
         <div class="course-meta">
-          <span>⏱ 14 Weeks</span>
-          <span>📊 Intermediate → Advanced</span>
-          <span>🎓 Certificate</span>
+          <span>⏱ 2 Months</span>
+          <span>📅 2 Classes/Week</span>
+          <span>🕑 2 hrs/class</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
           <div class="topic-pills">
-            <span class="topic-pill">Classes & Objects</span>
-            <span class="topic-pill">Templates</span>
-            <span class="topic-pill">STL</span>
-            <span class="topic-pill">Smart Pointers</span>
-            <span class="topic-pill">Lambda</span>
-            <span class="topic-pill">Move Semantics</span>
+            <span class="topic-pill">Basic C++</span>
+            <span class="topic-pill">OOP</span>
+            <span class="topic-pill">Pointers</span>
+            <span class="topic-pill">File Handling</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('C++ Programming — Rs. 9,000')">Enroll — Rs. 9,000</button>
+        <button class="btn-enroll" onclick="selectCourse('C++ Programming — Rs. 5,000')">Enroll — Rs. 5,000</button>
       </div>
     </div>
+
+    <!-- MS Office -->
+    <div class="course-card lang-html">
+      <div class="course-banner">💼</div>
+      <div class="course-body">
+        <span class="course-lang-tag">MS OFFICE</span>
+        <div class="course-name">MS Office Course</div>
+        <p class="course-desc">Master the essential Microsoft Office tools used in every workplace — Word, Excel, PowerPoint and more. A must-have skill for every professional.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 2 Classes/Week</span>
+          <span>🕑 1.5 hrs/class</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">MS Word</span>
+            <span class="topic-pill">MS Excel</span>
+            <span class="topic-pill">PowerPoint</span>
+            <span class="topic-pill">MS Outlook</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('MS Office Course — Rs. 8,000')">Enroll — Rs. 8,000</button>
+      </div>
+    </div>
+
+    <!-- Graphic Designing -->
+    <div class="course-card lang-css">
+      <div class="course-banner">🎨</div>
+      <div class="course-body">
+        <span class="course-lang-tag">DESIGNING</span>
+        <div class="course-name">Graphic Designing</div>
+        <p class="course-desc">Unleash your creativity with Adobe's industry-standard tools. Learn Illustrator and Photoshop to create stunning visuals, logos, posters and digital artwork.</p>
+        <div class="course-meta">
+          <span>⏱ 6 Months</span>
+          <span>📅 2 Classes/Week</span>
+          <span>🕑 2 hrs/class</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Adobe Illustrator</span>
+            <span class="topic-pill">Adobe Photoshop</span>
+            <span class="topic-pill">Logo Design</span>
+            <span class="topic-pill">Poster Design</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Graphic Designing — Rs. 10,000')">Enroll — Rs. 10,000</button>
+      </div>
+    </div>
+
+    <!-- Web Development -->
+    <div class="course-card lang-c">
+      <div class="course-banner">🌐</div>
+      <div class="course-body">
+        <span class="course-lang-tag">WEB DEV</span>
+        <div class="course-name">Web Development</div>
+        <p class="course-desc">Build real websites from scratch. Learn the fundamentals of web structure, styling, tables and forms — the essential building blocks of every modern website.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 2 Classes/Week</span>
+          <span>🕑 2 hrs/class</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">HTML Structure</span>
+            <span class="topic-pill">CSS Styling</span>
+            <span class="topic-pill">Tables</span>
+            <span class="topic-pill">Forms</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Web Development — Rs. 4,500')">Enroll — Rs. 4,500</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -764,9 +755,9 @@
 <section id="about">
   <div class="about-wrap">
     <div>
-      <span class="section-tag">Why CodeCraft</span>
-      <h2>Learn from Real<br>Industry Experts</h2>
-      <p class="section-lead">We don't just teach syntax — we build real problem-solvers. Our instructors are working professionals who bring live project experience to every class.</p>
+      <span class="section-tag">Why Cyber Nova</span>
+      <h2>Learn in a Real<br>Classroom Environment</h2>
+      <p class="section-lead">We don't just teach syntax — we build real problem-solvers. Our instructors are experienced professionals who teach hands-on, face-to-face at our institute.</p>
       <div class="about-features">
         <div class="feature-item">
           <div class="feature-icon">🎯</div>
@@ -778,8 +769,8 @@
         <div class="feature-item">
           <div class="feature-icon">📱</div>
           <div class="feature-text">
-            <h4>Learn Anytime, Anywhere</h4>
-            <p>Fully online with recorded lectures accessible 24/7 on mobile, tablet or desktop.</p>
+            <h4>In-Person Campus Classes</h4>
+            <p>All classes are held at our institute. Learn directly from instructors in a focused, hands-on classroom environment.</p>
           </div>
         </div>
         <div class="feature-item">
@@ -806,16 +797,20 @@
           <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ffd43b,#306998)"></div></div>
         </div>
         <div class="prog-item">
-          <div class="prog-label"><span>C++</span><span>92%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:92%;background:linear-gradient(90deg,#9b59b6,#6c3483)"></div></div>
+          <div class="prog-label"><span>C++</span><span>94%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#9b59b6,#6c3483)"></div></div>
         </div>
         <div class="prog-item">
-          <div class="prog-label"><span>C</span><span>91%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:91%;background:linear-gradient(90deg,#6295cb,#2b6cb0)"></div></div>
+          <div class="prog-label"><span>MS Office</span><span>98%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:98%;background:linear-gradient(90deg,#2196f3,#0d47a1)"></div></div>
         </div>
         <div class="prog-item">
-          <div class="prog-label"><span>HTML &amp; CSS</span><span>98%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:98%;background:linear-gradient(90deg,#e34c26,#264de4)"></div></div>
+          <div class="prog-label"><span>Graphic Designing</span><span>97%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:97%;background:linear-gradient(90deg,#ff6584,#e91e63)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Web Development</span><span>95%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:95%;background:linear-gradient(90deg,#e34c26,#264de4)"></div></div>
         </div>
       </div>
       <br>
@@ -857,7 +852,7 @@
         </div>
         <div class="reg-step">
           <div class="step-num">4</div>
-          <div class="step-text"><h4>Start Learning</h4><p>Receive login credentials and begin on your class date.</p></div>
+          <div class="step-text"><h4>Start Learning</h4><p>Visit the institute on your class start date and begin your journey!</p></div>
         </div>
       </div>
     </div>
@@ -910,11 +905,11 @@
         <label>Course *</label>
         <select id="courseSelect">
           <option value="">Select Course</option>
-          <option>Python Programming — Rs. 8,500</option>
-          <option>HTML Web Structure — Rs. 4,500</option>
-          <option>CSS Web Styling — Rs. 4,500</option>
-          <option>C Programming — Rs. 6,500</option>
-          <option>C++ Programming — Rs. 9,000</option>
+          <option>Python Programming — Rs. 8,000</option>
+          <option>C++ Programming — Rs. 5,000</option>
+          <option>MS Office Course — Rs. 8,000</option>
+          <option>Graphic Designing — Rs. 10,000</option>
+          <option>Web Development — Rs. 4,500</option>
         </select>
       </div>
       <div class="form-group">
@@ -926,107 +921,23 @@
   </div>
 </section>
 
-<!-- PAYMENT -->
-<section id="payment">
-  <div class="payment-wrap">
-    <span class="section-tag">Payments</span>
-    <h2>Secure Online Payment</h2>
-    <p class="section-lead">Pay quickly and securely using EasyPaisa. Your seat is reserved instantly upon successful payment.</p>
 
-    <div class="payment-card">
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem">Choose your payment method:</p>
-      <div class="payment-methods">
-        <div class="pm-option active" onclick="selectMethod(this, 'easypaisa')">
-          <div class="pm-icon">💚</div>
-          <div class="pm-name">EasyPaisa</div>
-          <div class="pm-tag">Recommended</div>
-        </div>
-        <div class="pm-option" onclick="selectMethod(this, 'bank')">
-          <div class="pm-icon">🏦</div>
-          <div class="pm-name">Bank Transfer</div>
-        </div>
-        <div class="pm-option" onclick="selectMethod(this, 'card')">
-          <div class="pm-icon">💳</div>
-          <div class="pm-name">Debit / Credit Card</div>
-        </div>
-      </div>
-
-      <!-- EasyPaisa Form -->
-      <div class="easypaisa-form visible" id="ep-form">
-        <div class="ep-header">
-          <div class="ep-logo">EP</div>
-          <div class="ep-info">
-            <h4>EasyPaisa Payment</h4>
-            <p>Fast, secure & available 24/7 across Pakistan</p>
-          </div>
-        </div>
-
-        <div class="order-summary">
-          <h4>Order Summary</h4>
-          <div class="order-row"><span id="summaryCourseName">Selected Course</span><span class="price" id="summaryPrice">—</span></div>
-          <div class="order-row"><span>Registration Fee</span><span class="price">Rs. 500</span></div>
-          <div class="order-row total"><span>Total</span><span class="price" id="summaryTotal">—</span></div>
-        </div>
-
-        <div class="form-row" style="margin-bottom:1rem">
-          <div class="form-group" style="margin-bottom:0">
-            <label>EasyPaisa Account Number *</label>
-            <input type="tel" id="epPhone" placeholder="03XX-XXXXXXX">
-          </div>
-          <div class="form-group" style="margin-bottom:0">
-            <label>Account Holder Name *</label>
-            <input type="text" id="epName" placeholder="Full name on account">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>CNIC (last 6 digits) *</label>
-          <input type="text" id="epCnic" placeholder="XXXXXX" maxlength="6">
-        </div>
-        <button class="btn-pay" onclick="handlePayment()">
-          <span>💚</span> Pay via EasyPaisa
-        </button>
-        <p class="pay-secure">🔒 Encrypted & Secured — Your payment info is never stored</p>
-      </div>
-
-      <!-- Bank Transfer Info -->
-      <div id="bank-form" style="display:none;background:var(--surface2);border-radius:12px;padding:1.5rem">
-        <h4 style="color:var(--white);margin-bottom:1rem;font-family:'Syne',sans-serif">Bank Transfer Details</h4>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-          <div class="order-row"><span style="color:var(--muted)">Bank Name</span><span>HBL / Meezan Bank</span></div>
-          <div class="order-row"><span style="color:var(--muted)">Account Title</span><span>CodeCraft Institute</span></div>
-          <div class="order-row"><span style="color:var(--muted)">Account No.</span><span>0123-456789-01</span></div>
-          <div class="order-row"><span style="color:var(--muted)">IBAN</span><span>PK36HABB0000000123456789</span></div>
-        </div>
-        <p style="margin-top:1rem;font-size:0.82rem;color:var(--muted)">After transfer, email your receipt to <strong style="color:var(--accent)">payments@codecraft.edu.pk</strong></p>
-      </div>
-
-      <!-- Card Form -->
-      <div id="card-form" style="display:none;background:var(--surface2);border-radius:12px;padding:1.5rem">
-        <h4 style="color:var(--white);margin-bottom:1rem;font-family:'Syne',sans-serif">Card Details</h4>
-        <div class="form-group"><label>Card Number</label><input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19"></div>
-        <div class="form-row">
-          <div class="form-group" style="margin-bottom:0"><label>Expiry</label><input type="text" placeholder="MM / YY" maxlength="7"></div>
-          <div class="form-group" style="margin-bottom:0"><label>CVV</label><input type="text" placeholder="XXX" maxlength="3"></div>
-        </div>
-        <button class="btn-pay" style="margin-top:1.2rem;background:var(--accent)" onclick="handlePayment()">💳 Pay Now</button>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="nav-logo">Code<span>Craft</span> Institute</div>
-      <p>Pakistan's leading online institution for programming education. Learn from experts, build real projects, launch your career.</p>
+      <div class="nav-logo">Cyber <span>Nova</span> Institute</div>
+      <p>Pakistan's leading institute for programming & IT education. Learn from experts, build real projects, and launch your career — all in a real classroom.</p>
     </div>
     <div class="footer-col">
       <h4>Courses</h4>
       <ul>
         <li><a href="#courses">Python</a></li>
-        <li><a href="#courses">HTML & CSS</a></li>
-        <li><a href="#courses">C / C++</a></li>
+        <li><a href="#courses">C++</a></li>
+        <li><a href="#courses">MS Office</a></li>
+        <li><a href="#courses">Graphic Designing</a></li>
+        <li><a href="#courses">Web Development</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1041,7 +952,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">📧 info@codecraft.edu.pk</a></li>
+        <li><a href="#">📧 info@cybernova.edu.pk</a></li>
         <li><a href="#">📞 0321-1234567</a></li>
         <li><a href="#">📍 Karachi, Pakistan</a></li>
         <li><a href="#">💬 WhatsApp</a></li>
@@ -1049,7 +960,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 CodeCraft Institute. All rights reserved.</span>
+    <span>© 2025 Cyber Nova Institute. All rights reserved.</span>
     <span>Privacy Policy · Terms of Service</span>
   </div>
 </footer>
@@ -1067,11 +978,11 @@
 <script>
   // Course prices map
   const prices = {
-    'Python Programming — Rs. 8,500': { price: 8500, label: 'Python Programming' },
-    'HTML Web Structure — Rs. 4,500': { price: 4500, label: 'HTML Web Structure' },
-    'CSS Web Styling — Rs. 4,500': { price: 4500, label: 'CSS Web Styling' },
-    'C Programming — Rs. 6,500': { price: 6500, label: 'C Programming' },
-    'C++ Programming — Rs. 9,000': { price: 9000, label: 'C++ Programming' },
+    'Python Programming — Rs. 8,000':  { price: 8000,  label: 'Python Programming' },
+    'C++ Programming — Rs. 5,000':     { price: 5000,  label: 'C++ Programming' },
+    'MS Office Course — Rs. 8,000':    { price: 8000,  label: 'MS Office Course' },
+    'Graphic Designing — Rs. 10,000':  { price: 10000, label: 'Graphic Designing' },
+    'Web Development — Rs. 4,500':     { price: 4500,  label: 'Web Development' },
   };
 
   let selectedCourse = null;
@@ -1170,7 +1081,7 @@
     }
 
     const course = document.getElementById('summaryCourseName').textContent;
-    showModal('💚', 'Payment Successful!', `Your EasyPaisa payment for ${course} has been processed! A confirmation SMS will be sent to your registered number shortly. Welcome to CodeCraft!`);
+    showModal('💚', 'Payment Successful!', `Your EasyPaisa payment for ${course} has been processed! A confirmation SMS will be sent to your registered number shortly. Welcome to Cyber Nova Institute!`);
   }
 
   function showModal(icon, title, msg) {
