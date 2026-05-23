@@ -662,7 +662,7 @@
         <div class="course-meta">
           <span>⏱ 1 Month</span>
           <span>📅 Mon &amp; Tue</span>
-          <span>🕑 5-7 PM</span>
+          <span>🕑 5–7 PM</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -673,7 +673,7 @@
             <span class="topic-pill">Speed &amp; Accuracy</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Typing Course — Rs. 1,500')">Enroll — Rs. 1,500</button>
+        <button class="btn-enroll" onclick="selectCourse('Typing Course — Mon &amp; Tue, 5–7 PM — Rs. 1,500')">Enroll — Rs. 1,500</button>
       </div>
     </div>
 
@@ -942,7 +942,7 @@
         <select id="courseSelect">
           <option value="">Select Course</option>
           <option>Basic Computer &amp; MS Office — Mon &amp; Thu, 5–7 PM — Rs. 5,000</option>
-          <option>Typing Course — Rs. 1,500</option>
+          <option>Typing Course — Mon &amp; Tue, 5–7 PM — Rs. 1,500</option>
           <option>Graphic Designing — Tue &amp; Fri, 5–7 PM — Rs. 10,500</option>
           <option>AI Course — Wed &amp; Sat, 5–7 PM — Rs. 13,500</option>
           <option>Web Development — Tue &amp; Fri, 3–5 PM — Rs. 10,000</option>
@@ -1025,7 +1025,7 @@
   // Course prices map
   const prices = {
     'Basic Computer & MS Office — Mon & Thu, 5–7 PM — Rs. 5,000':  { price: 5000,  label: 'Basic Computer & MS Office' },
-    'Typing Course — Rs. 1,500':                                    { price: 1500,  label: 'Typing Course' },
+    'Typing Course — Mon & Tue, 5–7 PM — Rs. 1,500':                { price: 1500,  label: 'Typing Course' },
     'Graphic Designing — Tue & Fri, 5–7 PM — Rs. 10,500':          { price: 10500, label: 'Graphic Designing' },
     'AI Course — Wed & Sat, 5–7 PM — Rs. 13,500':                  { price: 13500, label: 'AI Course' },
     'Web Development — Tue & Fri, 3–5 PM — Rs. 10,000':            { price: 10000, label: 'Web Development' },
@@ -1042,29 +1042,9 @@
   function selectCourse(courseFull) {
     selectedCourse = courseFull;
     document.getElementById('courseSelect').value = courseFull;
-    updateOrderSummary(courseFull);
     document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
   }
 
-  function updateOrderSummary(courseFull) {
-    const info = prices[courseFull];
-    if (!info) return;
-    document.getElementById('summaryCourseName').textContent = info.label;
-    document.getElementById('summaryPrice').textContent = 'Rs. ' + info.price.toLocaleString();
-    document.getElementById('summaryTotal').textContent = 'Rs. ' + (info.price + 500).toLocaleString();
-  }
-
-  document.getElementById('courseSelect').addEventListener('change', function() {
-    updateOrderSummary(this.value);
-  });
-
-  function selectMethod(el, method) {
-    document.querySelectorAll('.pm-option').forEach(o => o.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('ep-form').style.display = method === 'easypaisa' ? 'block' : 'none';
-    document.getElementById('bank-form').style.display = method === 'bank' ? 'block' : 'none';
-    document.getElementById('card-form').style.display = method === 'card' ? 'block' : 'none';
-  }
 
   function handleRegister() {
     const fname      = document.getElementById('fname').value.trim();
@@ -1106,8 +1086,6 @@
       .then(function() {
         btn.disabled = false;
         btn.textContent = 'Submit Registration →';
-        selectedCourse = course;
-        updateOrderSummary(course);
         showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
       })
       .catch(function(err) {
