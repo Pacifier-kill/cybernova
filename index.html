@@ -661,8 +661,8 @@
         <p class="course-desc">Build fast and accurate typing skills in Urdu, English, and Sindhi. An essential skill for office work, data entry, and everyday computer use.</p>
         <div class="course-meta">
           <span>⏱ 1 Month</span>
-          <span>📅 2 Classes/Week</span>
-          <span>🕑 1 hr/class</span>
+          <span>📅 Mon &amp; Tue</span>
+          <span>🕑 5-7</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -927,18 +927,15 @@
         <label>Phone Number *</label>
         <input type="tel" id="phone" placeholder="03XX-XXXXXXX">
       </div>
-      <div class="form-group">
-        <label>City *</label>
-        <select id="city">
-          <option value="">Select City</option>
-          <option>Karachi</option>
-          <option>Lahore</option>
-          <option>Islamabad</option>
-          <option>Rawalpindi</option>
-          <option>Peshawar</option>
-          <option>Quetta</option>
-          <option>Other</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City *</label>
+          <input type="text" id="city" value="Karachi" readonly style="background:var(--surface2);cursor:not-allowed;opacity:0.7;">
+        </div>
+        <div class="form-group">
+          <label>Country *</label>
+          <input type="text" id="country" value="Pakistan" readonly style="background:var(--surface2);cursor:not-allowed;opacity:0.7;">
+        </div>
       </div>
       <div class="form-group">
         <label>Course *</label>
@@ -952,6 +949,9 @@
           <option>Python Programming — Mon &amp; Thu, 3–5 PM — Rs. 12,000</option>
           <option>C++ Programming — Wed &amp; Sat, 3–5 PM — Rs. 10,000</option>
         </select>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--accent3);display:flex;align-items:center;gap:0.3rem;">
+          <span>📝</span> <strong>Note:</strong> For morning timings, contact us
+        </p>
       </div>
       <div class="form-group">
         <label>Prior Experience</label>
@@ -1072,6 +1072,7 @@
     const email      = document.getElementById('email').value.trim();
     const phone      = document.getElementById('phone').value.trim();
     const city       = document.getElementById('city').value;
+    const country    = document.getElementById('country').value;
     const course     = document.getElementById('courseSelect').value;
     const experience = document.getElementById('experience').value.trim();
 
@@ -1095,6 +1096,7 @@
       reply_to:    email,
       phone:       phone,
       city:        city,
+      country:     country,
       course:      course,
       experience:  experience || 'Not provided',
       submit_time: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }),
